@@ -36,18 +36,18 @@ final class FoodAnalyzerService {
     func mockAnalysisResult() -> FoodAnalysisResult {
         print("[DEBUG] FoodAnalyzerService: Returning mock analysis result.")
         let mockResults: [FoodAnalysisResult] = [
-            FoodAnalysisResult(name: "Grilled Chicken Bowl", ingredients: ["Chicken", "Rice", "Broccoli", "Olive Oil"], calories: 420, carbohydrates: 55, protein: 30, fat: 12),
-            FoodAnalysisResult(name: "Salmon Quinoa Plate", ingredients: ["Salmon", "Quinoa", "Spinach"], calories: 390, carbohydrates: 40, protein: 28, fat: 14),
-            FoodAnalysisResult(name: "Avocado Toast", ingredients: ["Eggs", "Avocado", "Toast"], calories: 320, carbohydrates: 30, protein: 18, fat: 16),
-            FoodAnalysisResult(name: "Beef Stew", ingredients: ["Beef", "Potato", "Carrot"], calories: 510, carbohydrates: 60, protein: 35, fat: 20),
-            FoodAnalysisResult(name: "Cheesy Pasta", ingredients: ["Pasta", "Tomato Sauce", "Cheese"], calories: 470, carbohydrates: 70, protein: 15, fat: 10),
-            FoodAnalysisResult(name: "Tofu Power Bowl", ingredients: ["Tofu", "Brown Rice", "Peas"], calories: 350, carbohydrates: 50, protein: 20, fat: 8),
-            FoodAnalysisResult(name: "Turkey Dinner", ingredients: ["Turkey", "Sweet Potato", "Green Beans"], calories: 400, carbohydrates: 45, protein: 32, fat: 9),
-            FoodAnalysisResult(name: "Shrimp Couscous", ingredients: ["Shrimp", "Couscous", "Zucchini"], calories: 330, carbohydrates: 38, protein: 25, fat: 7),
+            FoodAnalysisResult(name: "Grilled Chicken Bowl", ingredients: ["Chicken", "Rice", "Broccoli", "Olive Oil"], calories: 420, carbohydrates: 55, protein: 30, fat: 12, imageData: nil),
+            FoodAnalysisResult(name: "Salmon Quinoa Plate", ingredients: ["Salmon", "Quinoa", "Spinach"], calories: 390, carbohydrates: 40, protein: 28, fat: 14, imageData: nil),
+            FoodAnalysisResult(name: "Avocado Toast", ingredients: ["Eggs", "Avocado", "Toast"], calories: 320, carbohydrates: 30, protein: 18, fat: 16, imageData: nil),
+            FoodAnalysisResult(name: "Beef Stew", ingredients: ["Beef", "Potato", "Carrot"], calories: 510, carbohydrates: 60, protein: 35, fat: 20, imageData: nil),
+            FoodAnalysisResult(name: "Cheesy Pasta", ingredients: ["Pasta", "Tomato Sauce", "Cheese"], calories: 470, carbohydrates: 70, protein: 15, fat: 10, imageData: nil),
+            FoodAnalysisResult(name: "Tofu Power Bowl", ingredients: ["Tofu", "Brown Rice", "Peas"], calories: 350, carbohydrates: 50, protein: 20, fat: 8, imageData: nil),
+            FoodAnalysisResult(name: "Turkey Dinner", ingredients: ["Turkey", "Sweet Potato", "Green Beans"], calories: 400, carbohydrates: 45, protein: 32, fat: 9, imageData: nil),
+            FoodAnalysisResult(name: "Shrimp Couscous", ingredients: ["Shrimp", "Couscous", "Zucchini"], calories: 330, carbohydrates: 38, protein: 25, fat: 7, imageData: nil),
             // Invalid: missing ingredients, all values zero
-            FoodAnalysisResult(name: "Unknown Dish", ingredients: [], calories: 0, carbohydrates: 0, protein: 0, fat: 0),
+            FoodAnalysisResult(name: "Unknown Dish", ingredients: [], calories: 0, carbohydrates: 0, protein: 0, fat: 0, imageData: nil),
             // Invalid: negative values
-            FoodAnalysisResult(name: "Mystery", ingredients: ["Mystery"], calories: -1, carbohydrates: -1, protein: -1, fat: -1)
+            FoodAnalysisResult(name: "Mystery", ingredients: ["Mystery"], calories: -1, carbohydrates: -1, protein: -1, fat: -1, imageData: nil)
         ]
         return mockResults.randomElement()!
     }

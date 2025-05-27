@@ -28,8 +28,7 @@ Modules
 6. Display & Store Data
     * Present the analysis in a Card View layout.
         * Include the captured image and extracted data.
-    * Save this data locally using Realm Database for offline persistence.
-7. History of Analyzed Foods
-    * On the Home Screen, below the Click Food button, display a scrollable list of saved food analysis cards.
+    * Save this data locally in class or struct
+    * On the Home Screen, below the buttons , display a scrollable list of saved food analysis cards.
     * Each card shows the photo and the related nutritional data.
 	

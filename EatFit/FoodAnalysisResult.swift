@@ -17,4 +17,5 @@ struct FoodAnalysisResult: Codable, Identifiable {
     let carbohydrates: Int
     let protein: Int
     let fat: Int
+    let imageData: Data?
 } 
