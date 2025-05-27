@@ -1,0 +1,21 @@
+# Coding principles 
+- Use Swift and SwiftUI for coding
+- Use all SOLID pricnciple while implementig code
+- Create a new file for new view
+- Use MVVM architecture for development
+- Follow Apple's Swift API Design Guidelines
+- Use meaningful variable and function names
+- Keep functions small and focused
+
+
+# Documentation Rules
+- Add debug logs for important operations
+- Include comments explaining complex logic
+- Document public interfaces and methods
+- Use // MARK: for code section organization
+
+# SwiftUI Best Practices
+- Use PreviewProvider for all Views
+- Keep View files under 300 lines when possible
+- Extract reusable components into separate views
+- Use proper view modifiers ordering
