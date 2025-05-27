@@ -82,9 +82,6 @@ struct HomeView: View {
                             .padding(.top, 8)
                         }
                     } else {
-                        Image(systemName: "house.fill")
-                            .imageScale(.large)
-                            .foregroundStyle(.tint)
                         Text("Welcome to EatFit!")
                             .font(.title)
                             .fontWeight(.semibold)
