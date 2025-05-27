@@ -6,5 +6,7 @@
 	<array>
 		<dict/>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires camera access to allow you to take photos of your food for analysis.</string>
 </dict>
 </plist>
