@@ -16,7 +16,7 @@ Modules
     * Allow the user to capture a food photo.
 4. Photo Preview & Analyze Option
     * After capturing, display the photo in a small preview view.
-    * Below the preview, show an "Analyze Food" button.
+    * Below the preview, show an "Analyze Food" button and "Click Another pic".
 5. Food Analysis
     * On clicking Analyze Food, send the captured photo to the OpenAI API.
     * Extract the following nutritional information:

@@ -13,6 +13,7 @@ import UIKit
 struct CameraView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     @Binding var image: UIImage?
+    var sourceType: UIImagePickerController.SourceType = .camera
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: CameraView
@@ -22,7 +23,7 @@ struct CameraView: UIViewControllerRepresentable {
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
+            if let uiImage = info[.editedImage] as? UIImage ?? info[.originalImage] as? UIImage {
                 // Debug log for image capture
                 print("[DEBUG] CameraView: Image captured.")
                 parent.image = uiImage
@@ -44,8 +45,8 @@ struct CameraView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
-        picker.sourceType = .camera
-        picker.allowsEditing = false
+        picker.sourceType = sourceType
+        picker.allowsEditing = true // Enable cropping
         return picker
     }
     
@@ -56,6 +57,6 @@ struct CameraView: UIViewControllerRepresentable {
 struct CameraView_Previews: PreviewProvider {
     @State static var image: UIImage? = nil
     static var previews: some View {
-        CameraView(image: $image)
+        CameraView(image: $image, sourceType: .camera)
     }
 } 
