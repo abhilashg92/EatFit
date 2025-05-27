@@ -18,11 +18,37 @@ final class HomeViewModel: ObservableObject {
     // Published property to hold the captured image
     @Published var capturedImage: UIImage? = nil
     
+    // Enum for image source
+    enum ImageSourceType {
+        case camera
+        case photoLibrary
+    }
+    
+    // Published property to track image source
+    @Published var imageSource: ImageSourceType = .camera
+
+    // Show action sheet for source selection
+    @Published var showSourceActionSheet: Bool = false
+    
+    // MARK: - Food Analysis State
+    @Published var isAnalyzing: Bool = false
+    @Published var analysisResult: FoodAnalysisResult? = nil
+    @Published var analysisError: String? = nil
+
+    private let analyzerService = FoodAnalyzerService()
+
     /// Handles the action when the user taps the Click Food button.
     func clickFoodButtonTapped() {
         // Debug log for button tap
         print("[DEBUG] HomeViewModel: Click Food button tapped.")
+        showSourceActionSheet = true
+    }
+    
+    /// Set the image source and show the picker
+    func selectImageSource(_ source: ImageSourceType) {
+        imageSource = source
         showCamera = true
+        showSourceActionSheet = false
     }
     
     /// Handles the image received from the camera.
@@ -31,5 +57,25 @@ final class HomeViewModel: ObservableObject {
         print("[DEBUG] HomeViewModel: Received image from camera.")
         capturedImage = image
         showCamera = false
+    }
+
+    /// Triggers food analysis using the captured image.
+    @MainActor
+    func analyzeFood() async {
+        guard let image = capturedImage else { return }
+        isAnalyzing = true
+        analysisError = nil
+        analysisResult = nil
+        do {
+            // For now, use mock. Replace with real API call when ready.
+            // let result = try await analyzerService.analyzeFood(image: image)
+            let result = analyzerService.mockAnalysisResult()
+            analysisResult = result
+            print("[DEBUG] HomeViewModel: Analysis result received.")
+        } catch {
+            analysisError = error.localizedDescription
+            print("[DEBUG] HomeViewModel: Analysis failed: \(error.localizedDescription)")
+        }
+        isAnalyzing = false
     }
 } 
