@@ -35,6 +35,9 @@ final class HomeViewModel: ObservableObject {
     @Published var analysisResult: FoodAnalysisResult? = nil
     @Published var analysisError: String? = nil
 
+    // MARK: - In-memory History
+    @Published var history: [FoodAnalysisResult] = []
+
     private let analyzerService = FoodAnalyzerService()
 
     /// Handles the action when the user taps the Click Food button.
@@ -69,9 +72,20 @@ final class HomeViewModel: ObservableObject {
         do {
             // For now, use mock. Replace with real API call when ready.
             // let result = try await analyzerService.analyzeFood(image: image)
-            let result = analyzerService.mockAnalysisResult()
+            var result = analyzerService.mockAnalysisResult()
+            // Attach image data for history
+            result = FoodAnalysisResult(
+                name: result.name,
+                ingredients: result.ingredients,
+                calories: result.calories,
+                carbohydrates: result.carbohydrates,
+                protein: result.protein,
+                fat: result.fat,
+                imageData: image.jpegData(compressionQuality: 0.8)
+            )
             analysisResult = result
-            print("[DEBUG] HomeViewModel: Analysis result received.")
+            history.insert(result, at: 0)
+            print("[DEBUG] HomeViewModel: Analysis result received and added to history.")
         } catch {
             analysisError = error.localizedDescription
             print("[DEBUG] HomeViewModel: Analysis failed: \(error.localizedDescription)")
