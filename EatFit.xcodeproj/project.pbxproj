@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FEC28AFA2DE80DE6003644D1 /* secrets.config in Resources */ = {isa = PBXBuildFile; fileRef = FEC28AF92DE80DDD003644D1 /* secrets.config */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FED04DA92DE5E52E00D2FE6D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FEC28AF92DE80DDD003644D1 /* secrets.config */ = {isa = PBXFileReference; lastKnownFileType = text; path = secrets.config; sourceTree = "<group>"; };
 		FED04D982DE5E52D00D2FE6D /* EatFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED04DA82DE5E52E00D2FE6D /* EatFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED04DB22DE5E52E00D2FE6D /* EatFitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatFitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +93,7 @@
 		FED04D8F2DE5E52D00D2FE6D = {
 			isa = PBXGroup;
 			children = (
+				FEC28AF92DE80DDD003644D1 /* secrets.config */,
 				FED04D9A2DE5E52D00D2FE6D /* EatFit */,
 				FED04DAB2DE5E52E00D2FE6D /* EatFitTests */,
 				FED04DB52DE5E52E00D2FE6D /* EatFitUITests */,
@@ -227,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC28AFA2DE80DE6003644D1 /* secrets.config in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

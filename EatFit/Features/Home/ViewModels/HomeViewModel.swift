@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import UIKit
 
 // MARK: - HomeViewModel
 /// ViewModel for HomeView, manages UI state and actions.
@@ -70,19 +69,7 @@ final class HomeViewModel: ObservableObject {
         analysisError = nil
         analysisResult = nil
         do {
-            // For now, use mock. Replace with real API call when ready.
-            // let result = try await analyzerService.analyzeFood(image: image)
-            var result = analyzerService.mockAnalysisResult()
-            // Attach image data for history
-            result = FoodAnalysisResult(
-                name: result.name,
-                ingredients: result.ingredients,
-                calories: result.calories,
-                carbohydrates: result.carbohydrates,
-                protein: result.protein,
-                fat: result.fat,
-                imageData: image.jpegData(compressionQuality: 0.8)
-            )
+            let result = try await analyzerService.analyzeFoodWithGemini(image: image)
             analysisResult = result
             history.insert(result, at: 0)
             print("[DEBUG] HomeViewModel: Analysis result received and added to history.")
