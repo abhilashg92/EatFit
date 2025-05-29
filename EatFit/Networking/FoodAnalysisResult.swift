@@ -13,9 +13,9 @@ struct FoodAnalysisResult: Codable, Identifiable {
     let id = UUID()
     let name: String
     let ingredients: [String]
-    let calories: Int
-    let carbohydrates: Int
-    let protein: Int
-    let fat: Int
+    let calories: String
+    let carbohydrates: String
+    let protein: String
+    let fat: String
     let imageData: Data?
 } 
