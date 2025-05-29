@@ -14,7 +14,7 @@ EatFit is a native iOS app that helps users analyze food by taking a photo and i
   - Choose between camera or photo library for food images.
   - Crop images before analysis.
 - **Food Analysis:**  
-  - Analyze food photos using OpenAI API (mocked for demo).
+  - Analyze food photos using free Gemini api.
   - Extracts: Ingredients, Calories, Carbohydrates, Protein, Fat, and Dish Name.
 - **History:**  
   - View a scrollable, swipe-to-delete list of all analyzed foods.
